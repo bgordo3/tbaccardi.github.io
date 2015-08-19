@@ -1,0 +1,27 @@
+.jumbotron	{
+	background: transparent;
+	background: url("./shuttle.jpg") center center;
+	height: 450px;
+}
+
+.jumbo_source	{
+	color:rgb(150,150,150);
+	padding-bottom 70px;
+	margin-left: 1200px;
+}
+
+.announce	{
+	color:rgb(255,255,255);
+	margin-top: 240px;
+	margin-left: 40px;
+	padding-bottom: 40px;
+}
+
+.projects_body	{
+	margin-left: 25px;
+}
+
+body {
+  
+  
+}
