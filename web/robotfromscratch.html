@@ -26,21 +26,25 @@
 
     </nav>
     <div class = "projects_body">
-    <h1>You've reached the projects page!</h1>
+    <h1>You've reached the Robotics home page!</h1>
     <p>I'm still learning how to do all the html and css desgin for this page, so it's still under pretty heavy development.</p>
-    
+    <p>This page so far incorporates the my Mechatronics lab project (from back at school) as well as the Robot From Scratch project to replace it.</p>
     <video width="400" controls>
 	<source src="robot.ogg" type="video/ogg">
 	Your browser does not support html5 video.
     </video>
     <p>This is a video of a home-made differential drive robot I made for a design project in a class while back.</p>
-    <p>It basically consisted of an Arduino microcontroller on a custom 3D printed frame with some gearmotors withsome Hall Effect encoders. The code is linked <a href="/Users/Burns/Documents/web/rcrobot.ino" download>here</a>, in case anyone is interestedi.
+    <p>It basically consisted of an Arduino microcontroller on a custom 3D printed frame with some gearmotors withsome Hall Effect encoders. The code is linked <a href="/Users/Burns/Documents/web/rcrobot.ino" download>here</a>, in case anyone is interested. The control code is also on my github repository (https://github.com/tbaccardi/tbaccard.gihub.io/rcrobot.ino).
+    </p>
+    <p>For anyone who wants to build their own RC Arduino robot, there are a few things you'll need: 
+	1.The first component, obviously, is an Arduino. The better the Arduino, the more options you will have for your robot.
+	2.The next component you will need is an RC transmitter/receiver combination. For my robot, I used a Turnigy 9x 9 channel transmitter because I had it lying around from a previous project. A transmitter like this is complete overkill for a differential drive robot. The highest number of channels that you'll need for a simple RC platform is 3 (one for the throttle vector, one for steering, and potentially one for a reverse switch.) However, the number of channels you purchase for use with your robot should depend largely on what model Arduino you buy. An Arduino Uno only has 2 interrupt channels (see interrupts section). Interrupts are vastly superior than polling for signals that necessitate an immediate response, especially so when your CPU speed is limited (such as an Arduino). Therefore, you will probably want to only buy a 2-channel transmitter if you are using an Arduino Uno, unless you plan on upgrading to a Mega or Beaglebone Black in the future.
+	3.Next up is the frame. The frame should roughly depend on what you want the platform to do. I 3D printed my own frame at school to imitate the <a href = "https://www.sparkfun.com/products/13301">RedBot from Sparkfun</a> (note: it seems as though the popular redbot chassis has been replaced by the Shadow Chassis. I can't speak to the quality of the newer chassis, the basic style is the same). I seem to have lost my Creo Parametric CAD file that has the chassis drawn out, but if I manage to find it I will upload it to my GitHub repo.
+	
     </p>
 
-    <h3>Beaglebone Black</h3>
-    <p>The Beaglebone Black is a cool little Linux computer that has a lot of room for robotics and web services and things of that nature. I've played around with it to try to learn the basics of the Linux operating system (or rather the Linux kernel and the Debian operating system).
-    
-    <p>The Beaglebone Black is a big technological jump forward from the Arduino. Everything about the platform makes it a more capable platform for robotics and 
+    <h3>Robot from Scratch - Beaglebone</h3>
+	<p>The Robot From Scratch project originated from a desire to create a more advanced design for a robot build for a class project. The class project was based around an Arduino Uno microcontroller, but ongoing research during the design of the robot revealed that several more attractive options existed (due to time constraints, however, the Uno platform was ultimately chosen as the controller for the robot controller). A Beaglebone Black embedded Linux development board was purchased to supercede the Arduino Uno for future experimentation. 
     </div>
     </body>
 
