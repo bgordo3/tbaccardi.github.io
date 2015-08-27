@@ -62,7 +62,9 @@ void setup()
     
       dpulseTime = (dpulseEnd - dpulseInit);
       if(dpulseTime >= 0)  {
-      dAmp = ((18520  - dpulseTime) * (.3064))+15; 
+      // This basically is a cheap and easy calibration method. Modify the numbers
+      // to fit the PWM range produced by your receiver
+       dAmp = ((18520  - dpulseTime) * (.3064))+15; 
       }
   }
     
