@@ -9,7 +9,7 @@
   <body>
     <link rel = "stylesheet" href="company.css">
     <link rel = "stylesheet" href="css/bootstrap.min.css">
-
+    <link rel = "stylesheet" href="dyn.css"
     <nav class="navbar navbar-default">
       <div class="container-fluid">
 
@@ -36,4 +36,21 @@
     </div>
     </body>
 
-</html>
+   <h3>Project: Temperature Recordings Using the DS18B20</h3>
+	<p>	For a (side) project aat the office, I wanted to find a way to measure the temperatures of a few different enclosures throughout the course of the day to be able to quantitatively determine the best choice for materials and cooling system for a given application. The easy way to go about doing this would be to just use a handheld thermometer to place in the boxes throughout the day and periodically check up on them and record the internal temperatures. However, my availability at the site where the testing would be done is limited due to other (more pressing) ongoing projects. So I decided to come up with a way to automate the process.
+	<div class="col-sm-4">
+	<img src="DS18B20.jpg" width="270" height="210">	
+	</div>
+    </div>
+	<div class="col-sm-8" style="padding-top:60px;">
+	    <p>The picture to the left is a DS18B20 temperature sensor by Maxim Integrated. Rather than take analog measurements that can be recorded using an ADC, the DS18B20 spits out a proprietary (not a bad thing in this case, as you'll see) data signal that is transmitted over just one wire. The protocol is called, fittingly, the 1-Wire protocol.	    
+	</div>
+	<h4>1-Wire with the Beaglebone Black</h2>
+	<div class = "col-sm-8" style="padding-top:15px;">
+	    <p>Due to equipment constraint (and for a learning experience), I decided to use the Beaglebone device to take the temperature measurements of two differenct enclosures at the same time while they were both roasting in the Alabama summer heat. The plan was to run a temperature sensor to each enclosure using a twisted pair cable (Cat5e Ethernet cable with the connectors hacked off). The trouble with the experiment was that I had no idea how to implement the 1-Wire protocol.</p
+	   <p>Turns out, 1-Wire on the Beaglebone is pretty easy! The 1-Wire protocol is actually already programmed into the On-Chip Peripherals (OCP) for the Beaglebone Black Rev C. The issue? The default device tree settings for the Beaglebone mask the functionality of the bus protocol. So, to enable it, we'll have to dive into <i>device tree overlays</i> for the Linux 3.8+ kernel</p> 
+	</div>
+	<h3>Device Tree Overlays</h3>
+	    <p>So, a device tree overlay for the Linux kernel is essentially a method of overwriting the default configuration of the AM335x pin multiplex settings... or in plain English, it tells the operating system the function of each pin. There is a default device tree file located in <code>/sys/firmware/</code> that gives the settings of each pin. However, overlays are a way to tell the kernel that we want to do something other than, say, be a GPIO (input/output). In this way, we can expose functionality of the divice that is not directly exposed to the user!</p>
+	    <p>Before we get started, first lets check on the status of the 1-Wire protocol, just to make sure it's there. Navigate to <code>$  /sys/devices/bus/</code> then <code>$  ls</code< you should see a 1-Wire listing. </p> 
+</html

@@ -1,19 +1,28 @@
 div.desc{
     background-color: #000;
     bottom: 0;
-    color: #fff;
-    left: aligned;
+    color: #ffffff;
+    text-align: center; 
  
-    opacity: 0.5;
+    opacity: .8;
     position: absolute;
     width: 270px;
     overflow: hidden;
 }
 
-div.desc.h3{
-	left: 25%;
+desc.h3{
+	position: center;
 }
 .fix{
     width: 100%;
-    padding: 0px;
+    padding-left: 15px;
+}
+
+.col-xs-3{
+    padding-left: 15px;
+
+}
+
+.col-sm-8{
+    padding-top: 0;
 }
